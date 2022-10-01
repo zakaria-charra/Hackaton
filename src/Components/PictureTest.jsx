@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import SpeechRecognition,{useSpeechRecognition} from 'react-speech-recognition';
+import { createSpeechlySpeechRecognition } from '@speechly/speech-recognition-polyfill';
 
+
+const appId = 'aff93c10-48d7-4d7b-9790-46f65f4875f1';
+const SpeechlySpeechRecognition = createSpeechlySpeechRecognition(appId);
+SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
 
 export const PictureTest = (props) => {
 
